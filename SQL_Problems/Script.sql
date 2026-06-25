@@ -52,5 +52,13 @@ where "Payment_Method"= 'UPI'
 select * from upi_payment
 
 --8. Find the average customer rating per vehicle type:
+create view avg_rating_on_vehicle_type as
+SELECT "Vehicle_Type",
+       AVG(NULLIF("Customer_Rating", 'null')::NUMERIC) AS Average_Rating
+FROM bookings
+GROUP BY "Vehicle_Type";
+
+select * from avg_rating_on_vehicle_type;
+
 --9. Calculate the total booking value of rides completed successfully:
 --10. List all incomplete rides along with the reason:
