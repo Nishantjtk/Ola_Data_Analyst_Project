@@ -61,4 +61,11 @@ GROUP BY "Vehicle_Type";
 select * from avg_rating_on_vehicle_type;
 
 --9. Calculate the total booking value of rides completed successfully:
+create view total_earned as
+select SUM("Booking_Value") as total_value
+from bookings 
+where "Booking_Status" = 'Success'
+
+select * from total_earned
+
 --10. List all incomplete rides along with the reason:
