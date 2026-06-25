@@ -20,7 +20,16 @@ select count(*) from bookings
 where "Booking_Status" = 'Canceled by Customer';
 
 select * from canceled_ride_customer;
+
 --4. List the top 5 customers who booked the highest number of rides:
+create view top5_customer as
+select "Customer_ID" , Count("Booking_ID") from bookings 
+group by "Customer_ID" 
+order by count("Booking_ID") desc 
+limit 5;
+
+select * from "top5_customer";
+
 --5. Get the number of rides cancelled by drivers due to personal and car-related issues:
 --6. Find the maximum and minimum driver ratings for Prime Sedan bookings:
 --7. Retrieve all rides where payment was made using UPI:
