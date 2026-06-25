@@ -15,6 +15,11 @@ group by b."Vehicle_Type" ;
 select * from avg_distance
 
 --3. Get the total number of cancelled rides by customers:
+create view canceled_ride_customer as 
+select count(*) from bookings 
+where "Booking_Status" = 'Canceled by Customer';
+
+select * from canceled_ride_customer;
 --4. List the top 5 customers who booked the highest number of rides:
 --5. Get the number of rides cancelled by drivers due to personal and car-related issues:
 --6. Find the maximum and minimum driver ratings for Prime Sedan bookings:
