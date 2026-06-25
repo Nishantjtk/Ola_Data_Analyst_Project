@@ -45,6 +45,12 @@ where "Vehicle_Type" ='Prime Sedan';
 select * from prime_sedan_ratings
 
 --7. Retrieve all rides where payment was made using UPI:
+create view upi_Payment as 
+select * from bookings 
+where "Payment_Method"= 'UPI'
+
+select * from upi_payment
+
 --8. Find the average customer rating per vehicle type:
 --9. Calculate the total booking value of rides completed successfully:
 --10. List all incomplete rides along with the reason:
