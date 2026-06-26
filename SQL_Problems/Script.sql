@@ -42,14 +42,14 @@ create view prime_sedan_ratings as
 select MAX("Customer_Rating")as "max_rating",MIN("Customer_Rating")as "min_rating" from bookings 
 where "Vehicle_Type" ='Prime Sedan';
 
-select * from prime_sedan_ratings
+select * from prime_sedan_ratings;
 
 --7. Retrieve all rides where payment was made using UPI:
 create view upi_Payment as 
 select * from bookings 
 where "Payment_Method"= 'UPI'
 
-select * from upi_payment
+select * from upi_payment;
 
 --8. Find the average customer rating per vehicle type:
 create view avg_rating_on_vehicle_type as
