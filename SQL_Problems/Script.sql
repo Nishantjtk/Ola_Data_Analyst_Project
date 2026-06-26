@@ -66,12 +66,12 @@ select SUM("Booking_Value") as total_value
 from bookings 
 where "Booking_Status" = 'Success'
 
-select * from total_earned
+select * from total_earned;
 
 --10. List all incomplete rides along with the reason:
 create view incomplete_reason as
 select "Booking_ID" , "Incomplete_Rides_Reason" from bookings 
 where "Incomplete_Rides" = 'Yes';
 
-select * from incomplete_reason
+select * from incomplete_reason;
 
